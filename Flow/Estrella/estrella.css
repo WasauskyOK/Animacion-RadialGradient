@@ -1,0 +1,98 @@
+.imagen1{
+	width: 800px;
+	clip-path:inset(0px);
+	transition: all 2s;
+}
+.imagen1:hover{
+	clip-path:inset(50px round 50px 0px 50px 0px);
+	
+	transition: all 3s;
+}
+
+.cuadro{
+	margin: 2em auto;
+	padding: 2em;
+	width: 200px;
+	height: 200px;
+	box-sizing: border-box;
+	--color:darkorange;
+	text-align: center;
+	display: flex;
+	align-items: center;/*horizontal*/
+	justify-content: center;/*vertical*/
+	background-color: var(--color);
+	box-shadow: 0px 0px 0px 2px gray;
+	position: relative;
+	/*filter: contrast(4);
+	
+	/*filter: blur(1px);
+	*/
+}
+.cuadro::before{
+	content: "";
+	height: 3px;
+	width: 5;
+
+	left: 0px;
+	bottom: 0px;
+	position: absolute;
+	display: block;
+	background-color:red;
+	box-shadow: 0px -200px red;
+	filter: contrast(1px);
+}
+.cuadro::after{
+	content: "";
+	height: 0;
+	width: 3px;
+	top: 0;
+	left: 0px;
+	background-color: red;
+	position: absolute;
+	display: block;
+	box-shadow: 198px 0px red;
+	
+}
+.cuadro:hover:after{
+		height: 100%;
+		transition: all 1s;
+}
+.cuadro:hover:before{
+width: 100%;
+	transition: all 2s;
+	
+}
+.contenedor{
+	width: 68.3%;
+	height: auto;
+/*	
+	box-shadow: 16px 4px 20px 10px blue;
+*/
+}
+.imagen2{
+	
+clip-path:polygon(50% 0% ,75% 0% ,100% 0% ,100% 50%,100% 100%,50% 100%,0% 100%,0% 50%,0% 0%,25% 0%);
+/*transition: all 6s;*/
+	animation: estrella 2s infinite alternate linear;
+	
+}
+@keyframes estrella{
+	from{
+		transform: rotateY(0deg);
+	}
+	to{
+		/*transition: all 0.5s;*/
+	/*clip-path:circle(20%  at 50% 50%);*/
+	clip-path:polygon(50% 0% ,75% 25% ,100% 25% ,75% 50%,100% 100%,50% 75%,0% 100%,25% 50%,0% 25%,25% 25%);
+	transform: rotateY(360deg)
+	}
+}
+.imagen2:hover{
+	/*
+	transition: all 1.5s;
+	/*clip-path:circle(20%  at 50% 50%);*/
+	/*
+	clip-path:polygon(50% 0% ,75% 25% ,100% 25% ,75% 50%,100% 100%,50% 75%,0% 100%,25% 50%,0% 25%,25% 25%);
+*/
+}
+

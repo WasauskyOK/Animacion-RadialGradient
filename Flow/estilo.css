@@ -1,0 +1,98 @@
+
+.caja{
+    width: 0px;
+    height: 0px;
+    
+    border-left: 100vw solid transparent;
+    border-top: 0px solid transparent;
+    border-bottom: 50px solid white;
+    
+    z-index: 5;
+        
+}
+/*
+body::before{
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-image: linear-gradient(135deg,white 50%,blue 50%);
+    z-index: -1;
+}
+*/
+body{
+   overflow: hidden;
+  background: linear-gradient(79deg,crimson,blue,red);
+  transform-style: preserve-3d;
+    -webkit-perspective: 1200;
+}
+.caja2{
+    
+    left: 90px;
+    top: 90px;
+    width: 70vw;
+    height: 70vh;
+    position: relative;
+    background-image: 
+    radial-gradient( circle at center,
+    violet ,
+    indigo ,
+    rgb(77, 77, 224) ,
+    green ,
+    yellow ,
+    orange ,
+    red ) ;
+    
+    animation:girar 380ms infinite   steps(150);
+    
+   
+    
+    border-radius: 50%  20% / 50%;
+    outline: 10px   double yellow ;
+    border:20px dotted red;
+    box-shadow:  85px 8px rgba(145,189,255,0.6),
+                -85px 8px red,
+                0px -60px blue,
+                0px 80px green ;
+
+            }
+            
+.caja2::before{
+    content: "";
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    left: -25px;
+    top: -25px;
+    background-color: transparent;
+    border: 20px double red;
+    transform: rotateZ(65deg);
+    animation:retro 4s infinite  linear ease-in;
+
+}
+@keyframes retro {
+        
+    to {
+        transform: rotateZ(-1turn);
+    }
+}
+@keyframes girar {
+    to{
+      
+
+        transform: rotateZ(1turn);
+        filter: blur(6.5px) brightness(200%);
+        background-image: 
+        radial-gradient( circle at center,
+        yellow ,
+        red  ,
+        rgb(77, 77, 224) ,
+        green ,
+    
+        violet ,
+        orange ,
+        indigo);
+    }
+}
